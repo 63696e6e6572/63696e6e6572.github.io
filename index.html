@@ -1,13 +1,40 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>63696e6e6572's homepage</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+      $(function(){
+        //XML File
+        var xml = "https://github.com/63696e6e6572.atom";
+        //Parse the XML
+        var xmlDoc = $.parseXML(xml); 
+        //Load the XML
+        var $xml = $(xmlDoc);
+        // Find Person Tag
+        var $entries = $xml.find("entry");
+        //Parse the Tag
+        $entries.each(function(){
+          var id = $(this).find('id').text(),
+              published = $(this).find('published').text,
+              updated = $(this).find('updated').text,
+              elink = $(this).find('elink').text,
+              title = $(this).find('title').text,
+              content = $(this).find('content').text();
+          //Print the Tag elements to list items
+          $("#EntryList" ).append('<li>' +title+ ' - ' +updated+ '</li>');
+        });
+      });
+    </script>
+
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
+
     <meta name="viewport" content="width=device-width">
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -26,21 +53,7 @@
           <span aria-hidden="true" class="octicon octicon-link"></span></a>
         <h3>Welcome to GitHub Pages.</h3>
 
-        <?php
-
-          $xml = new DomDocument();
-          $xml->load('https://github.com/63696e6e6572.atom');
-
-          $xsl = new DomDocument();
-          $xsl->load('stylesheets/style-xml.css');
-
-          $xslt = new XsltProcessor();
-          $xslt->importStylesheet($xsl);
-
-          $transformation = $xslt->transformToXml($xml);
-          echo $transformation;
-
-        ?>
+        <ul id="EntryList"></ul>
         
       </section>
       <footer>
