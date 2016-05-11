@@ -9,18 +9,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="javascripts/moment-with-locales.js"></script>
-    <script type="text/javascript" src="javascripts/FeedEk.js"><!--
-      $('#divRss').FeedEk({
-        FeedUrl:'https://github.com/63696e6e6572.atom',
-        MaxCount : 5,
-        ShowDesc : true,
-        ShowPubDate:true,
-        DescCharacterLimit:100,
-        TitleLinkTarget:'_blank',
-        DateFormat: 'MM/DD/YYYY',
-        DateFormatLang:'en'
-      });
-    //--></script>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -41,6 +29,19 @@
       <section class="blockRight">
         <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
         <h3>Welcome to GitHub Pages.</h3>
+
+        <script type="text/javascript" src="javascripts/FeedEk.js"><!--
+          $('#divRss').FeedEk({
+            FeedUrl:'https://github.com/63696e6e6572.atom',
+            MaxCount : 5,
+            ShowDesc : true,
+            ShowPubDate:true,
+            DescCharacterLimit:100,
+            TitleLinkTarget:'_blank',
+            DateFormat: 'MM/DD/YYYY',
+            DateFormatLang:'en'
+          });
+        //--></script>
 
         <div id="divRss"></div>
         
