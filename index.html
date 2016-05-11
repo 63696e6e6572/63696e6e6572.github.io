@@ -3,60 +3,51 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>63696e6e6572's homepage</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script>
-      $(function(){
-        //XML File
-        var xml = "https://github.com/63696e6e6572.atom";
-        //Parse the XML
-        var xmlDoc = $.parseXML(xml); 
-        //Load the XML
-        var $xml = $(xmlDoc);
-        // Find Person Tag
-        var $entries = $xml.find("entry");
-        //Parse the Tag
-        $entries.each(function(){
-          var id = $(this).find('id').text(),
-              published = $(this).find('published').text,
-              updated = $(this).find('updated').text,
-              elink = $(this).find('elink').text,
-              title = $(this).find('title').text,
-              content = $(this).find('content').text();
-          //Print the Tag elements to list items
-          $("#EntryList" ).append('<li>' +title+ ' - ' +updated+ '</li>');
-        });
-      });
-    </script>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-
     <meta name="viewport" content="width=device-width">
 
+    <title>63696e6e6572's homepage</title>
+
+    <script src="moment-with-langs.min.js"></script>
+    <script type="text/javascript" src="javascripts/FeedEk.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+      $('#divRss').FeedEk({
+        FeedUrl:'https://github.com/63696e6e6572.atom',
+        MaxCount : 5,
+        ShowDesc : true,
+        ShowPubDate:true,
+        DescCharacterLimit:100,
+        TitleLinkTarget:'_blank',
+        DateFormat: 'MM/DD/YYYY',
+        DateFormatLang:'en'
+      });
+    </script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/feedEkList.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
   </head>
   <body>
     <div class="wrapper">
-      <header>
+      <header class="blockLeft">
         <h1>Welcome to 63696e6e6572's homepage on GitHub</h1>
         <p>Feel free to bookmark this page to keep an eye on my project updates.</p>
 	
         <p class="view"><a href="https://github.com/63696e6e6572">View My GitHub Profile</a></p>
 
       </header>
-      <section>
+      <section class="blockRight">
         <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true">
           <span aria-hidden="true" class="octicon octicon-link"></span></a>
         <h3>Welcome to GitHub Pages.</h3>
 
-        <ul id="EntryList"></ul>
+        <div id="divRss"></div>
         
       </section>
-      <footer>
+      <footer class="blockFoot">
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/63696e6e6572">63696e6e6572</a></small></p>
       </footer>
     </div>
