@@ -3,12 +3,33 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="content-language" content="en" />
     <meta name="viewport" content="width=device-width">
 
     <title>63696e6e6572's homepage</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<<<<<<< HEAD
+    <!-- <script src="javascripts/moment-with-locales.js"></script> -->
+    <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script type="text/javascript" src="javascripts/FeedEk.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#divRss').FeedEk({
+          FeedUrl: 'https://github.com/63696e6e6572.atom',
+          MaxCount : 10,
+          ShowDesc : true,
+          ShowPubDate:true,
+          DescCharacterLimit:250,
+          TitleLinkTarget:'_blank',
+          DateFormat: 'MM/DD/YYYY',
+          DateFormatLang:'en'
+        });
+      });
+    </script>
+=======
     <script src="javascripts/moment-with-locales.js"></script>
+>>>>>>> refs/remotes/origin/master
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -26,10 +47,26 @@
         <p>Feel free to bookmark this page to keep an eye on my project updates.</p>
         <p class="view"><a href="https://github.com/63696e6e6572">View My GitHub Profile</a></p>
       </header>
+
       <section class="blockRight">
         <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-        <h3>Welcome to GitHub Pages.</h3>
+        <h3>Welcome to My GitHub Pages</h3>
 
+<<<<<<< HEAD
+        <div class="rssDiv">
+          <div id="divRss"></div>
+            <strong>Code</strong>
+            <pre class="prettyprint">
+$('#divRss').FeedEk({
+  FeedUrl: 'https://github.com/63696e6e6572.atom',
+  MaxCount: 10,
+  DateFormat: 'L',
+  DateFormatLang:'en-gb'
+});
+</pre>
+        </div>
+        <div style="clear: both"></div>
+=======
         <script type="text/javascript" src="javascripts/FeedEk.js"><!--
           $('#divRss').FeedEk({
             FeedUrl:'https://github.com/63696e6e6572.atom',
@@ -45,7 +82,9 @@
 
         <div id="divRss"></div>
         
+>>>>>>> refs/remotes/origin/master
       </section>
+
       <footer class="blockFoot">
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/63696e6e6572">63696e6e6572</a></small></p>
       </footer>
